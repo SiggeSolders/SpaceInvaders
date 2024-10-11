@@ -8,8 +8,8 @@ public class Visualizer : MonoBehaviour
     public float minHeight = 15.0f;
     public float maxHeight = 425.0f;
     public float updateSenistivity = 0.5f;
-    
-    public Color visualizerColor = Color.gray;
+
+    public Sprite visualizerSprite;
 
     [Space(15)]
     public AudioClip audioClip;
@@ -48,8 +48,14 @@ public class Visualizer : MonoBehaviour
 
             newSize.y = Mathf.Clamp (Mathf.Lerp (newSize.y, minHeight +(spectrumData[i] * (maxHeight - minHeight) * 5.0f), updateSenistivity), minHeight, maxHeight);
             visualizerObjects[i].GetComponent<RectTransform>().sizeDelta = newSize;
+
+            Image image = visualizerObjects[i].GetComponent<Image>();
+            if(image != null && visualizerSprite != null)
+            {
+                image.sprite = visualizerSprite;
+                image.color = Color.white;
+            }
             
-            visualizerObjects[i].GetComponent<Image>().color = visualizerColor;
         }
     }
 }

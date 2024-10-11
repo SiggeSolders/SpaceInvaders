@@ -37,13 +37,16 @@ public class Visualizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float[] spectrumData = m_audioSource.GetSpectrumData(visualzierSimples, 0, FFTWindow.Rectangular);
-        
-        for(int i = 0; i < visualizerObjects.Length; i++)
+        float[] spectrumData = new float[64];
+
+        m_audioSource.GetSpectrumData(spectrumData, 0, FFTWindow.Rectangular);
+
+        for (int i = 0; i < visualizerObjects.Length; i++)
         {
             Vector2 newSize = visualizerObjects[i].GetComponent<RectTransform>().rect.size;
 
-            newSize.y = Mathf.Lerp (newSize.y, minHeight +(spectrumData[i] * (maxHeight - minHeight) * 5.0f), updateSenistivity);
+
+            newSize.y = Mathf.Clamp (Mathf.Lerp (newSize.y, minHeight +(spectrumData[i] * (maxHeight - minHeight) * 5.0f), updateSenistivity), minHeight, maxHeight);
             visualizerObjects[i].GetComponent<RectTransform>().sizeDelta = newSize;
             
             visualizerObjects[i].GetComponent<Image>().color = visualizerColor;

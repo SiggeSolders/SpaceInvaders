@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equalizer
       objectReference: {fileID: 0}
+    - target: {fileID: 4143337339465850302, guid: 0b8f99ca99044cf4a91175b06b5a0d84, type: 3}
+      propertyPath: maxHeight
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143337339465850302, guid: 0b8f99ca99044cf4a91175b06b5a0d84, type: 3}
+      propertyPath: visualzierSimples
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4533047815513481286, guid: 0b8f99ca99044cf4a91175b06b5a0d84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 366.70633

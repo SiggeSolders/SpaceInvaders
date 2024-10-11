@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Visualizer : MonoBehaviour
 {
-    public float minHeight = 15.0f;
-    public float maxHeight = 425.0f;
     public float updateSenistivity = 0.5f;
 
     public Sprite visualizerSprite;
@@ -18,11 +16,13 @@ public class Visualizer : MonoBehaviour
     public int visualzierSimples = 64;
 
     public VisualizerObjectSkript[] visualizerObjects;
+    public Image[] visualizerImage;
     AudioSource m_audioSource;
 
     void Start()
     {
         visualizerObjects = GetComponentsInChildren<VisualizerObjectSkript>();
+        visualizerImage = GetComponentsInChildren<Image>();
 
         if (!audioClip)
         {
@@ -43,19 +43,12 @@ public class Visualizer : MonoBehaviour
 
         for (int i = 0; i < visualizerObjects.Length; i++)
         {
-            Vector2 newSize = visualizerObjects[i].GetComponent<RectTransform>().rect.size;
-
-
-            newSize.y = Mathf.Clamp (Mathf.Lerp (newSize.y, minHeight +(spectrumData[i] * (maxHeight - minHeight) * 5.0f), updateSenistivity), minHeight, maxHeight);
-            visualizerObjects[i].GetComponent<RectTransform>().sizeDelta = newSize;
+            float newSize = visualizerObjects[i].GetComponent<Image>().fillAmount;
+            newSize =  Mathf.Lerp(newSize, spectrumData[i] * 2, updateSenistivity);
+            visualizerObjects[i].GetComponent<Image>().fillAmount = newSize;
 
             Image image = visualizerObjects[i].GetComponent<Image>();
-            if(image != null && visualizerSprite != null)
-            {
-                image.sprite = visualizerSprite;
-                image.color = Color.white;
-            }
-            
+            visualizerObjects[i].GetComponent<Image>().sprite = visualizerSprite;
         }
     }
 }

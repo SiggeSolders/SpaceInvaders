@@ -7,9 +7,17 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
+    BeatCounter checkIfSync;
+    public GameObject beatConductor;
+
     public Laser laserPrefab;
     Laser laser;
     float speed = 5f;
+
+    private void Start()
+    {
+        checkIfSync = beatConductor.GetComponent<BeatCounter>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,7 +40,7 @@ public class Player : MonoBehaviour
 
         transform.position = position;
 
-        if (Input.GetKeyDown(KeyCode.Space) && laser == null)
+        if (Input.GetKeyDown(KeyCode.Space) && laser == null && checkIfSync.inSync == true && checkIfSync.missleShot == false)
         {
             laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
         }

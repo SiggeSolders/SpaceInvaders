@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class MysteryShip : MonoBehaviour
+public class MysteryShipSkriptKopia : MonoBehaviour
 {
     float speed = 5f;
     float cycleTime = 5f;
@@ -16,7 +16,7 @@ public class MysteryShip : MonoBehaviour
     public GameObject lineRendererTarget;
     LineRenderer lineR;
 
-    
+
     void Start()
     {
         lineR = lineRendererTarget.GetComponent<LineRenderer>();
@@ -39,7 +39,7 @@ public class MysteryShip : MonoBehaviour
             return;
         }
 
-        if(direction == 1)
+        if (direction == 1)
         {
             //rör sig åt höger
             transform.position += speed * Time.deltaTime * Vector3.right;
@@ -61,13 +61,13 @@ public class MysteryShip : MonoBehaviour
         }
     }
 
-  
+
     //flyttar den till en plast precis utanför scenen.
     void SetInvisible()
     {
         isVisible = false;
 
-        if(direction == 1)
+        if (direction == 1)
         {
             transform.position = rightDestination;
         }
@@ -88,10 +88,10 @@ public class MysteryShip : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             SetInvisible();
-            GameManager.Instance.OnMysteryShipKilled(this);
+            GameManagerKopia.Instance.OnMysteryShipKilled(this);
         }
     }
 }

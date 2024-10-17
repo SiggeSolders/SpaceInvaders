@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    BeatCounter checkIfSync;
+    BeatCounter checkBeatCounter;
     public GameObject beatConductor;
 
     public Laser laserPrefab;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        checkIfSync = beatConductor.GetComponent<BeatCounter>();
+        checkBeatCounter = beatConductor.GetComponent<BeatCounter>();
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
         transform.position = position;
 
-        if (Input.GetKeyDown(KeyCode.Space) && laser == null && checkIfSync.inSync == true && checkIfSync.missleShot == false)
+        if (Input.GetKeyDown(KeyCode.Space) && laser == null && checkBeatCounter.inSync == true && checkBeatCounter.missleShot == false)
         {
             laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
         }

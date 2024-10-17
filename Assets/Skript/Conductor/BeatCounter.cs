@@ -6,8 +6,11 @@ using System;
 
 public class BeatCounter : MonoBehaviour
 {
+    [SerializeField]
     private float songPos;
+    [SerializeField]
     private double songPosRoundedUp;
+    [SerializeField]
     private double songPosRoundedDown;
 
     public bool inSync;
@@ -34,11 +37,11 @@ public class BeatCounter : MonoBehaviour
         songPosRoundedDown = Math.Floor(songPos);
 
         //kollar om låten är vid en beat
-        if(songPosRoundedUp - songPos <= 0.15 && songPosRoundedUp - songPos >= 0)
+        if(songPosRoundedUp - songPos <= 0.2 && songPosRoundedUp - songPos >= 0)
         {
             inSync = true;
         }
-        else if(songPosRoundedDown - songPos >= 0.15 && songPosRoundedDown - songPos <= 0)
+        else if(songPosRoundedDown - songPos >= -0.2 && songPosRoundedDown - songPos <= 0)
         {
             inSync = true;
         }

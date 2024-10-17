@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     BeatCounter checkBeatCounter;
     public GameObject beatConductor;
 
-    public Laser laserPrefab;
-    Laser laser;
+    public Missile missilePrefab;
+    Missile missile;
     float speed = 5f;
 
     private void Start()
@@ -43,13 +43,13 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == true && checkBeatCounter.missleShot <= 0)
         {
             checkBeatCounter.missleShot = 2;
-            laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Missile") || collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Laser") || collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
             GameManager.Instance.OnPlayerKilled(this);
         }

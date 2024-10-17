@@ -14,7 +14,7 @@ public class Invaders : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 direction = Vector3.right;
 
-    public Missile missilePrefab;
+    public Laser laserPrefab;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Invaders : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(MissileAttack), 1, 1); //Hur ofta ska den skjuta iväg missiler
+        InvokeRepeating(nameof(LaserAttack), 1, 1); //Hur ofta ska den skjuta iväg missiler
     }
 
     //Skapar själva griden med alla invaders.
@@ -63,7 +63,7 @@ public class Invaders : MonoBehaviour
     }
 
     //Skjuter slumpmässigt iväg en missil.
-    void MissileAttack()
+    void LaserAttack()
     {
         int nrOfInvaders = GetInvaderCount();
 
@@ -82,7 +82,7 @@ public class Invaders : MonoBehaviour
             float rand = UnityEngine.Random.value;
             if (rand < 0.2)
             {
-                Instantiate(missilePrefab, invader.position, Quaternion.identity);
+                Instantiate(laserPrefab, invader.position, Quaternion.identity);
                 break;
             }
         }

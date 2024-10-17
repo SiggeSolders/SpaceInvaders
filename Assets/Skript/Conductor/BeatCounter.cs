@@ -6,17 +6,17 @@ using System;
 
 public class BeatCounter : MonoBehaviour
 {
-    [SerializeField]
     private float songPos;
     [SerializeField]
     private double songPosRoundedUp;
-    [SerializeField]
     private double songPosRoundedDown;
 
     public bool inSync;
-    public bool missleShot;
+    [SerializeField]
+    public int missleShot;
 
-    //int roundedUpValue;
+    [SerializeField]
+    int roundedUpValue;
 
     public GameObject conductor;
     ConductorScript beatConductor;
@@ -24,7 +24,7 @@ public class BeatCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //roundedUpValue = 1;
+        roundedUpValue = 1;
         beatConductor = conductor.GetComponent<ConductorScript>();
     }
 
@@ -49,5 +49,13 @@ public class BeatCounter : MonoBehaviour
         {
             inSync = false;
         }
+
+        //minskar missileShot och ökar roundedUpValue
+        if(roundedUpValue == songPosRoundedUp)
+        {
+            roundedUpValue += 1;
+            missleShot -= 1;
+        }
+        
     }
 }

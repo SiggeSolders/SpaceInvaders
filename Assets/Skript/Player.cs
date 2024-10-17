@@ -40,8 +40,9 @@ public class Player : MonoBehaviour
 
         transform.position = position;
 
-        if (Input.GetKeyDown(KeyCode.Space) && laser == null && checkBeatCounter.inSync == true && checkBeatCounter.missleShot == false)
+        if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == true && checkBeatCounter.missleShot <= 0)
         {
+            checkBeatCounter.missleShot = 2;
             laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
         }
     }

@@ -32,6 +32,7 @@ public class Invader : MonoBehaviour
     //pandlar mellan olika sprited för att skapa en animation
     private void AnimateSprite()
     {
+
         animationFrame++;
         if(animationFrame >= animationSprites.Length)
         {

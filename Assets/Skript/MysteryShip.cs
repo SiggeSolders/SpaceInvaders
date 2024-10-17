@@ -13,11 +13,16 @@ public class MysteryShip : MonoBehaviour
     int direction = -1;
     bool isVisible;
 
+    public GameObject lineRendererTarget;
+    LineRenderer lineR;
+
     
     void Start()
     {
-        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
-        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+        lineR = lineRendererTarget.GetComponent<LineRenderer>();
+
+        Vector3 leftEdge = lineR.GetPosition(0);
+        Vector3 rightEdge = lineR.GetPosition(3);
 
         //positionen där den kommer stanna utanför skärmen.
         leftDestination = new Vector2(leftEdge.x - 1f, transform.position.y);

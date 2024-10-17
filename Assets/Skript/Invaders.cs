@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Invaders : MonoBehaviour
 {
+    public GameObject lineRendererTarget;
+    LineRenderer lineR;
+
     public Invader[] prefab = new Invader[5];
 
     private int row = 5;
@@ -16,8 +19,13 @@ public class Invaders : MonoBehaviour
 
     public Laser laserPrefab;
 
+    private Vector3 leftEdge;
+    private Vector3 rightEdge;
+
     private void Awake()
     {
+        lineR = lineRendererTarget.GetComponent<LineRenderer>();
+
         initialPosition = transform.position;
         CreateInvaderGrid();
     }
@@ -108,8 +116,8 @@ public class Invaders : MonoBehaviour
         float speed = 1f;
         transform.position += speed * Time.deltaTime * direction;
 
-        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
-        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+        leftEdge = lineR.GetPosition(0);
+        rightEdge = lineR.GetPosition(3);
 
         foreach (Transform invader in transform)
         {

@@ -7,6 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
+    public LineRenderer lineRendererTarget;
+    LineRenderer lineR;
+
     BeatCounter checkBeatCounter;
     public GameObject beatConductor;
 
@@ -16,6 +19,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        lineR = lineRendererTarget.GetComponent<LineRenderer>();
+
         checkBeatCounter = beatConductor.GetComponent<BeatCounter>();
     }
 
@@ -33,10 +38,10 @@ public class Player : MonoBehaviour
             position.x += speed * Time.deltaTime;
         }
 
-        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
-        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+        Vector3 leftEdge = lineR.GetPosition(0);
+        Vector3 rightEdge = lineR.GetPosition(3);
 
-        position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
+        position.x = Mathf.Clamp(position.x, leftEdge.x + 1, rightEdge.x - 1);
 
         transform.position = position;
 

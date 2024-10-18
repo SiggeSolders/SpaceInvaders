@@ -32,6 +32,7 @@ public class Invader : MonoBehaviour
     //pandlar mellan olika sprited för att skapa en animation
     private void AnimateSprite()
     {
+
         animationFrame++;
         if(animationFrame >= animationSprites.Length)
         {
@@ -42,7 +43,7 @@ public class Invader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Missile"))
         {
             GameManager.Instance.OnInvaderKilled(this);
         }

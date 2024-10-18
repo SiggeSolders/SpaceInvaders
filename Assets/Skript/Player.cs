@@ -7,9 +7,17 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    public Laser laserPrefab;
-    Laser laser;
+    BeatCounter checkBeatCounter;
+    public GameObject beatConductor;
+
+    public Missile missilePrefab;
+    Missile missile;
     float speed = 5f;
+
+    private void Start()
+    {
+        checkBeatCounter = beatConductor.GetComponent<BeatCounter>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,15 +40,16 @@ public class Player : MonoBehaviour
 
         transform.position = position;
 
-        if (Input.GetKeyDown(KeyCode.Space) && laser == null)
+        if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == true && checkBeatCounter.missleShot <= 0)
         {
-            laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            checkBeatCounter.missleShot = 2;
+            missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Missile") || collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Laser") || collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
             GameManager.Instance.OnPlayerKilled(this);
         }

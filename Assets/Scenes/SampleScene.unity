@@ -1897,7 +1897,7 @@ MonoBehaviour:
   - {fileID: 3849425860129258494, guid: 22123c39ca1fb4348a92e3f000aaf519, type: 3}
   - {fileID: 6369893895785001218, guid: 9a74d9a8fa5e46242819f257cb5f418e, type: 3}
   - {fileID: 6369893895785001218, guid: 9a74d9a8fa5e46242819f257cb5f418e, type: 3}
-  laserPrefab: {fileID: 5713427383262513139, guid: d7674cb6878d20545aac66c9a1e3bc61, type: 3}
+  laserPrefab: {fileID: 2489140764658812699, guid: 3fb465e87c8163f498cfcadb74d5b972, type: 3}
 --- !u!4 &1902566237
 Transform:
   m_ObjectHideFlags: 0

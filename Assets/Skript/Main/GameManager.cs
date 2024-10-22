@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     private void SetScore(int playerScore)
     {
         score = playerScore;
-        scoretext.text = "x" + playerScore;
+        scoretext.text = "Score: " + playerScore;
         Debug.Log("score: " + playerScore);
     }
 

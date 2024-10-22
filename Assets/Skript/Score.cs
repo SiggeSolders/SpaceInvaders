@@ -18,7 +18,8 @@ public class Score : MonoBehaviour
             {
                 inventory.objects = inventory.objects + Objectvalue;
                
-                sm.ScoreCount++;
+                //sm.ScoreCount++;
+                sm.UpdateScore();
             }
         }
     }

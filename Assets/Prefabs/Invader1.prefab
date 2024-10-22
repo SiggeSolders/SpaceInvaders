@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4151872409208354194}
   - component: {fileID: 4278168555483603205}
   - component: {fileID: -3192131327434463825}
+  - component: {fileID: 1786917582688636807}
   m_Layer: 8
   m_Name: Invader1
-  m_TagString: Untagged
+  m_TagString: Invader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +72,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45, y: 0.45}
+    oldSize: {x: 1.125, y: 1.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -175,3 +176,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7d6b53e687353d642b371d709283d368, type: 3}
   - {fileID: 21300000, guid: a626cd836fb2e3e429503706c67e0e0b, type: 3}
   animationTime: 1
+--- !u!114 &1786917582688636807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722057184548066821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f7d67a5d03bde4cac9b4721c98cee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Object: 0

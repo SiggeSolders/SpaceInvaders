@@ -5,13 +5,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Missile : Projectile
+public class Laser : Projectile
 {
     private void Awake()
     {
-        direction = Vector3.up;
+        direction = Vector3.down;
     }
-   
+
     void Update()
     {
         transform.position += speed * Time.deltaTime * direction;
@@ -19,17 +19,12 @@ public class Missile : Projectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CheckCollision(collision);
-    }
+        Walls walls = collision.gameObject.GetComponent<Walls>();
 
-    void CheckCollision(Collider2D collision)
-    {
-        Bunker bunker = collision.gameObject.GetComponent<Bunker>();
-
-        if (bunker == null) //Om det inte är en bunker vi träffat så ska skottet försvinna.
+        Destroy(gameObject); //så fort den krockar med något så ska den försvinna.
+        if (walls == null)
         {
-            Destroy(gameObject);
+            GameManager.Instance.StartShaking();
         }
     }
-
 }

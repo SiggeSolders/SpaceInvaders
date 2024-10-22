@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public ScreenShake _screenShake;
     private Player player;
     private Invaders invaders;
     private MysteryShip mysteryShip;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         invaders = FindObjectOfType<Invaders>();
         mysteryShip = FindObjectOfType<MysteryShip>();
         bunkers = FindObjectsOfType<Bunker>();
+
 
         NewGame();
     }
@@ -130,6 +132,11 @@ public class GameManager : MonoBehaviour
             invaders.gameObject.SetActive(false);
             OnPlayerKilled(player);
         }
+    }
+
+    public void StartShaking()
+    {
+        StartCoroutine(_screenShake.Shaking());
     }
 
 }

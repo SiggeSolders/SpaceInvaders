@@ -123,6 +123,94 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &91709324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91709325}
+  - component: {fileID: 91709326}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &91709325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91709324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1968147295}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &91709326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91709324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec82d3e97b08f94438926be4f77bee8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.016666412
+      value: 0
+      inSlope: 1.1934894
+      outSlope: 1.1934894
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.275
+      value: 0.3083184
+      inSlope: -0.11236435
+      outSlope: -0.11236435
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.27840984
+    - serializedVersion: 3
+      time: 0.5291877
+      value: 0.1202973
+      inSlope: -0.47081497
+      outSlope: -0.47081497
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0083313
+      value: -0.002357483
+      inSlope: -0.2559875
+      outSlope: -0.2559875
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &107397890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7917714721244554150, guid: f1270630bd303fc4daf8306283063cf0, type: 3}
@@ -1370,7 +1458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRendererTarget: {fileID: 781623153}
   beatConductor: {fileID: 635262991}
-  missilePrefab: {fileID: 9011447115342558278, guid: 8281aaf2db16c0a4eaad9477dbd73677, type: 3}
+  missilePrefab: {fileID: 8747416964141690900, guid: 8281aaf2db16c0a4eaad9477dbd73677, type: 3}
 --- !u!50 &1015060547
 Rigidbody2D:
   serializedVersion: 4
@@ -2260,12 +2348,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968147291}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 91709325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019583176
 GameObject:
@@ -2450,6 +2538,10 @@ PrefabInstance:
       propertyPath: scoretext
       value: 
       objectReference: {fileID: 107397890}
+    - target: {fileID: 5709762764798598551, guid: f8285957936f7bd4abdcce763de65596, type: 3}
+      propertyPath: _screenShake
+      value: 
+      objectReference: {fileID: 91709326}
     - target: {fileID: 6026622090953507566, guid: f8285957936f7bd4abdcce763de65596, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2600,7 +2692,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1968147295}
+  - {fileID: 91709325}
   - {fileID: 1015060550}
   - {fileID: 1132410360}
   - {fileID: 329958400}

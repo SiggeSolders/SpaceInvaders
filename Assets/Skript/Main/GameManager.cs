@@ -98,9 +98,9 @@ public class GameManager : MonoBehaviour
 
     private void SetScore(int playerScore)
     {
-        playerScore++;
-        
+        score = playerScore;
         scoretext.text = "x" + playerScore;
+        Debug.Log("score: " + playerScore);
     }
 
 
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
     public void OnInvaderKilled(Invader invader)
     {
         invader.gameObject.SetActive(false);
-
+        SetScore(score + 1);
        
 
         if (invaders.GetInvaderCount() == 0)

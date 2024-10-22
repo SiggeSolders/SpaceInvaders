@@ -2535,6 +2535,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5542505377433894249, guid: f8285957936f7bd4abdcce763de65596, type: 3}
+      propertyPath: sm
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542505377433894249, guid: f8285957936f7bd4abdcce763de65596, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542505377433894249, guid: f8285957936f7bd4abdcce763de65596, type: 3}
+      propertyPath: scoretext
+      value: 
+      objectReference: {fileID: 107397890}
+    - target: {fileID: 5709762764798598551, guid: f8285957936f7bd4abdcce763de65596, type: 3}
       propertyPath: scoretext
       value: 
       objectReference: {fileID: 107397890}
@@ -2586,7 +2598,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7355487621994649115, guid: f8285957936f7bd4abdcce763de65596, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7355487621994649115, guid: f8285957936f7bd4abdcce763de65596, type: 3}
+    - {fileID: 5542505377433894249, guid: f8285957936f7bd4abdcce763de65596, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2601,7 +2619,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2164403016776709063, guid: f1270630bd303fc4daf8306283063cf0, type: 3}
       propertyPath: m_Name
-      value: Text (TMP)
+      value: Score
       objectReference: {fileID: 0}
     - target: {fileID: 7614169959640683544, guid: f1270630bd303fc4daf8306283063cf0, type: 3}
       propertyPath: m_Pivot.x

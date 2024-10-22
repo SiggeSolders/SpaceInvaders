@@ -16,4 +16,11 @@ public class ScoreManager : MonoBehaviour
     {
         
     }
+
+    public void UpdateScore()
+    {
+        ScoreCount++;
+    }
+
+
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
+using TMPro;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
@@ -14,9 +15,13 @@ public class GameManager : MonoBehaviour
     private MysteryShip mysteryShip;
     private Bunker[] bunkers;
 
+    public TextMeshProUGUI scoretext;
+
     //Används ej just nu, men ni kan använda de senare
     public int score { get; private set; } = 0;
     public int lives { get; private set; } = 3;
+
+    public int playerScore;
 
     private void Awake()
     {
@@ -91,10 +96,13 @@ public class GameManager : MonoBehaviour
         invaders.gameObject.SetActive(false);
     }
 
-    private void SetScore(int score)
+    private void SetScore(int playerScore)
     {
+        playerScore++;
         
+        scoretext.text = "x" + playerScore;
     }
+
 
     private void SetLives(int lives)
     {

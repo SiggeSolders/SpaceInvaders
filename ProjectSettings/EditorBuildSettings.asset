@@ -4,23 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Main Menu(Mira).unity
-    guid: 09acd02c507570144896095176aa4a67
-  - enabled: 1
-    path: Assets/Scenes/quitgame.unity
-    guid: e6104731e07a76e4eaf8d7e628faffa8
-  - enabled: 1
-    path: Assets/Scenes/DeathScreen.unity
-    guid: cd8eb6b9c1b65384480e576abea64db8
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: bcea835be9e9f5d4d97a64de49eec390
-  - enabled: 1
-    path: Assets/Scenes/IntroScene.unity
-    guid: 5ae05ee7a0f10ea45bb300d89d53bd8d
+  m_Scenes: []
   m_configObjects: {}

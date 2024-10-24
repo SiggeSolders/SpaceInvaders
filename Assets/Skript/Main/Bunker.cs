@@ -8,17 +8,19 @@ public class Bunker : MonoBehaviour
 {
     int nrOfHits = 0;
     SpriteRenderer spRend;
+    private AudioSource hit;
     private void Awake()
     {
         spRend = GetComponent<SpriteRenderer>();
+        hit = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
        
-        if (other.gameObject.layer == LayerMask.NameToLayer("Missile") || other.gameObject.layer == LayerMask.NameToLayer("Invader"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Laser") || other.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
-
+            hit.Play();
             //Ändrar färgen beroende på antal träffar.
             nrOfHits++;
             Color oldColor = spRend.color;
@@ -31,7 +33,6 @@ public class Bunker : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
-            
         }
     }
 

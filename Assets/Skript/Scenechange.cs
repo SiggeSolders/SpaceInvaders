@@ -8,11 +8,11 @@ public class Scenechange : MonoBehaviour
     public string scene;
     public void Play()
     {
-        SceneManager.LoadScene(sceneName:"SampleScene");
+        SceneManager.LoadScene(scene);
     }
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(sceneName:"quitgame");
     }
 
 }

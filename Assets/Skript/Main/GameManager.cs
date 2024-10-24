@@ -125,17 +125,17 @@ public class GameManager : MonoBehaviour
        
         if(invader.invaderType == 1)
         {
-            SetScore(score + 100);
+            SetScore(score + (100 * player.multiplier));
         }
 
         if (invader.invaderType == 2)
         {
-            SetScore(score + 150);
+            SetScore(score + (150 * player.multiplier));
         }
 
         if (invader.invaderType == 3)
         {
-            SetScore(score + 300);
+            SetScore(score + (300 * player.multiplier));
         }
         if (invaders.GetInvaderCount() == 0)
         {
@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour
     public void OnMysteryShipKilled(MysteryShip mysteryShip)
     {
         mysteryShip.gameObject.SetActive(false);
+        SetScore(score + (500 * player.multiplier));
     }
 
     public void OnBoundaryReached()

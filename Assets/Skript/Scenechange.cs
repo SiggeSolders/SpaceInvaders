@@ -12,7 +12,7 @@ public class Scenechange : MonoBehaviour
     }
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(sceneName:"quitgame");
     }
 
 }

@@ -17,6 +17,6 @@ public class quitgame : MonoBehaviour
     }
     private void Awake()
     {
-        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }

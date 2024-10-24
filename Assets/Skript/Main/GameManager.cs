@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using TMPro;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
@@ -130,6 +132,7 @@ public class GameManager : MonoBehaviour
 
         player.gameObject.SetActive(false);
 
+        SceneManager.LoadScene(sceneName: "DeathScreen");
     }
 
     public void OnInvaderKilled(Invader invader)

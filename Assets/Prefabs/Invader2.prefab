@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ccc02f398f27dc541820700ef6174f89, type: 3}
   - {fileID: 21300000, guid: ae6735b883c6815458eb3479bd435a54, type: 3}
   animationTime: 1
+  invaderType: 2
 --- !u!114 &-2775611885629024342
 MonoBehaviour:
   m_ObjectHideFlags: 0

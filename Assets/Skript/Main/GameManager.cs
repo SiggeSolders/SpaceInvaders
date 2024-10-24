@@ -119,9 +119,21 @@ public class GameManager : MonoBehaviour
     public void OnInvaderKilled(Invader invader)
     {
         invader.gameObject.SetActive(false);
-        SetScore(score + 1);
        
+        if(invader.invaderType == 1)
+        {
+            SetScore(score + 100);
+        }
 
+        if (invader.invaderType == 2)
+        {
+            SetScore(score + 150);
+        }
+
+        if (invader.invaderType == 3)
+        {
+            SetScore(score + 300);
+        }
         if (invaders.GetInvaderCount() == 0)
         {
             NewRound();

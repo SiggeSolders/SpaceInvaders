@@ -8,7 +8,7 @@ public class Scenechange : MonoBehaviour
     public string scene;
     public void Play()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(sceneName:"SampleScene");
     }
     public void Quit()
     {

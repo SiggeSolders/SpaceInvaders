@@ -12,7 +12,7 @@ public class Invader : MonoBehaviour
 {
     public Sprite[] animationSprites = new Sprite[2];
     public float animationTime;
-
+    public int invaderType; 
     SpriteRenderer spRend;
     int animationFrame;
     // Start is called before the first frame update

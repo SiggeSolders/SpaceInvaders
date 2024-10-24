@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public int playerScore;
 
+    private AudioSource playerDeath;
+
     private void Awake()
     {
         if (Instance != null)
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
         invaders = FindObjectOfType<Invaders>();
         mysteryShip = FindObjectOfType<MysteryShip>();
         bunkers = FindObjectsOfType<Bunker>();
-
+        playerDeath = GetComponent<AudioSource>();
 
         NewGame();
     }
@@ -121,7 +123,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    private IEnumerator DeathSwitch(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName: "DeathScreen");
+    }
     private void SetLives(int lives)
     {
        
@@ -131,8 +137,9 @@ public class GameManager : MonoBehaviour
     {
 
         player.gameObject.SetActive(false);
+        playerDeath.Play();
 
-        SceneManager.LoadScene(sceneName: "DeathScreen");
+        StartCoroutine(DeathSwitch(1.0f));
     }
 
     public void OnInvaderKilled(Invader invader)

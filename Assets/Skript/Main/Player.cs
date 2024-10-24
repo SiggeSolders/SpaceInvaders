@@ -18,11 +18,13 @@ public class Player : MonoBehaviour
     float speed = 5f;
     public int multiplier = 1;
 
+
     private void Start()
     {
         lineR = lineRendererTarget.GetComponent<LineRenderer>();
 
         checkBeatCounter = beatConductor.GetComponent<BeatCounter>();
+
     }
 
     // Update is called once per frame
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Laser") || collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
+
             GameManager.Instance.OnPlayerKilled(this);
         }
     }

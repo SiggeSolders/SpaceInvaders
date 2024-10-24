@@ -21,10 +21,15 @@ public class BeatCounter : MonoBehaviour
     public GameObject conductor;
     ConductorScript beatConductor;
 
+
+    private void Awake()
+    {
+        roundedUpValue = 4;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        roundedUpValue = 1;
+        //roundedUpValue = 1;
         beatConductor = conductor.GetComponent<ConductorScript>();
     }
 

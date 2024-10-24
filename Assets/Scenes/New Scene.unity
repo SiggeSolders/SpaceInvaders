@@ -1226,6 +1226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e2cc1fb68a99f4aae7e94e1b5c278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRendererTarget: {fileID: 1661427739}
   beatConductor: {fileID: 1969989701}
   missilePrefab: {fileID: 8747416964141690900, guid: d3839eeb0b7fd4a4c9edf186b73b8b0c, type: 3}
 --- !u!50 &1218498028

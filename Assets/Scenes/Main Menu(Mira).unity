@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a7251e13ef7914d8164724b0dc8256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
+  scene: SampleScene
 --- !u!114 &834230684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a7251e13ef7914d8164724b0dc8256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
+  scene: quitgame
 --- !u!114 &1016802079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,8 +609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 212.25}
-  m_SizeDelta: {x: 970, y: 970}
+  m_AnchoredPosition: {x: -10.937195, y: 139.18707}
+  m_SizeDelta: {x: 1202.3947, y: 1116.1259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960392259
 MonoBehaviour:

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using TMPro;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
     private Bunker[] bunkers;
 
     public TextMeshProUGUI scoretext;
+    public TextMeshProUGUI multiplierText;
+    public GameObject multiplier; 
 
     //Används ej just nu, men ni kan använda de senare
     public int score { get; private set; } = 0;
@@ -33,6 +37,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        multiplier.SetActive(false);
     }
 
     private void OnDestroy()
@@ -60,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             NewGame();
         }
+        SetMultiplier();
     }
 
     private void NewGame()
@@ -102,6 +108,18 @@ public class GameManager : MonoBehaviour
         scoretext.text = "Score: " + playerScore;
         Debug.Log("score: " + playerScore);
     }
+    public void SetMultiplier()
+    {
+        multiplierText.text = player.multiplier + "X";
+        if (player.multiplier >= 1)
+        {
+            multiplier.SetActive(true);
+        }
+        else
+        {
+            multiplier.SetActive(false);
+        }
+    }
 
 
     private void SetLives(int lives)
@@ -114,6 +132,7 @@ public class GameManager : MonoBehaviour
 
         player.gameObject.SetActive(false);
 
+        SceneManager.LoadScene(sceneName: "DeathScreen");
     }
 
     public void OnInvaderKilled(Invader invader)
@@ -122,17 +141,17 @@ public class GameManager : MonoBehaviour
        
         if(invader.invaderType == 1)
         {
-            SetScore(score + 100);
+            SetScore(score + (100 * player.multiplier));
         }
 
         if (invader.invaderType == 2)
         {
-            SetScore(score + 150);
+            SetScore(score + (150 * player.multiplier));
         }
 
         if (invader.invaderType == 3)
         {
-            SetScore(score + 300);
+            SetScore(score + (300 * player.multiplier));
         }
         if (invaders.GetInvaderCount() == 0)
         {
@@ -143,6 +162,7 @@ public class GameManager : MonoBehaviour
     public void OnMysteryShipKilled(MysteryShip mysteryShip)
     {
         mysteryShip.gameObject.SetActive(false);
+        SetScore(score + (500 * player.multiplier));
     }
 
     public void OnBoundaryReached()

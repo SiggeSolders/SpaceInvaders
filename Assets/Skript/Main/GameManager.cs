@@ -27,7 +27,11 @@ public class GameManager : MonoBehaviour
 
     public int playerScore;
 
+    public GameObject PlayerHit;
+    public GameObject InvaderHit;
+
     private AudioSource playerDeath;
+    private AudioSource invaderDeath;
 
     private void Awake()
     {
@@ -56,7 +60,9 @@ public class GameManager : MonoBehaviour
         invaders = FindObjectOfType<Invaders>();
         mysteryShip = FindObjectOfType<MysteryShip>();
         bunkers = FindObjectsOfType<Bunker>();
-        playerDeath = GetComponent<AudioSource>();
+        playerDeath = PlayerHit.GetComponent<AudioSource>();
+        invaderDeath = InvaderHit.GetComponent<AudioSource>();
+
 
         NewGame();
     }
@@ -145,6 +151,7 @@ public class GameManager : MonoBehaviour
     public void OnInvaderKilled(Invader invader)
     {
         invader.gameObject.SetActive(false);
+        invaderDeath.Play();
        
         if(invader.invaderType == 1)
         {

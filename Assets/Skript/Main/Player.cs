@@ -50,7 +50,10 @@ public class Player : MonoBehaviour
         {
             checkBeatCounter.missleShot = 2;
             missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
-            multiplier = multiplier * 2;
+            if(multiplier <= 16)
+            {
+                multiplier = multiplier * 2;
+            }
         }
         if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == true && checkBeatCounter.missleShot <= 0)
         {

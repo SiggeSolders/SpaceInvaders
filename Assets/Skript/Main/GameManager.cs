@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private Bunker[] bunkers;
 
     public TextMeshProUGUI scoretext;
+    public TextMeshProUGUI multiplierText;
+    public GameObject multiplier; 
 
     //Används ej just nu, men ni kan använda de senare
     public int score { get; private set; } = 0;
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        multiplier.SetActive(false);
     }
 
     private void OnDestroy()
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
         {
             NewGame();
         }
+        SetMultiplier();
     }
 
     private void NewGame()
@@ -101,6 +105,18 @@ public class GameManager : MonoBehaviour
         score = playerScore;
         scoretext.text = "Score: " + playerScore;
         Debug.Log("score: " + playerScore);
+    }
+    public void SetMultiplier()
+    {
+        multiplierText.text = player.multiplier + "X";
+        if (player.multiplier >= 1)
+        {
+            multiplier.SetActive(true);
+        }
+        else
+        {
+            multiplier.SetActive(false);
+        }
     }
 
 

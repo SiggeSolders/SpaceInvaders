@@ -10,19 +10,19 @@ public class DeathScore : MonoBehaviour
 
     GameObject scoreObject;
 
-    GameManager score;
+    ScoreKeeper scoreKeeper;
 
     int deathScore;
 
     private void Awake()
     {
-        scoreObject = GameObject.FindWithTag("GameManager");
+        scoreObject = GameObject.Find("ScoreKeeper");
 
         textMeshPro = GetComponent<TextMeshProUGUI>();
 
-        score = scoreObject.GetComponent<GameManager>();
+        scoreKeeper = scoreObject.GetComponent<ScoreKeeper>();
 
-        deathScore = score.playerScore;
+        deathScore = scoreKeeper.endScore;
     }
     // Start is called before the first frame update
     void Start()

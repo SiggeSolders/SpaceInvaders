@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void SetMultiplier()
     {
         multiplierText.text = player.multiplier + "X";
-        if (player.multiplier >= 1)
+        if (player.multiplier > 1)
         {
             multiplier.SetActive(true);
         }

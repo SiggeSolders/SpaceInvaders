@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public Missile missilePrefab;
     Missile missile;
     float speed = 5f;
-    public int multiplier;
+    public int multiplier = 1;
 
     private void Start()
     {
@@ -50,12 +50,12 @@ public class Player : MonoBehaviour
         {
             checkBeatCounter.missleShot = 2;
             missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
-            if(multiplier <= 16)
+            if(multiplier < 16)
             {
                 multiplier = multiplier * 2;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == true && checkBeatCounter.missleShot <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == false)
         {
             multiplier = 1;
         }

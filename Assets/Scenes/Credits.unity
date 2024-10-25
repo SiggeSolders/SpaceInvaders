@@ -240,10 +240,10 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
-  m_StopNaN: 0
+  m_StopNaN: 1
   m_Dithering: 0
   m_ClearDepth: 1
   m_AllowXRRendering: 1
@@ -410,6 +410,81 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &178605053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178605054}
+  - component: {fileID: 178605056}
+  - component: {fileID: 178605055}
+  m_Layer: 5
+  m_Name: Bild
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &178605054
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178605053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 480212454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -1700}
+  m_SizeDelta: {x: 387, y: 301}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &178605055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178605053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9b88523ac0bb2e043b05dc7ef29d3c23, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &178605056
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178605053}
+  m_CullTransparentMesh: 1
 --- !u!1 &480212449
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +581,7 @@ RectTransform:
   m_LocalScale: {x: 0.015048909, y: 0.015048909, z: 0.015048909}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 178605054}
   - {fileID: 2055826866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -547,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4232c08a02af0147b1dcfd036bc9cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 1
+  scrollSpeed: 0.6
 --- !u!1 &535359601
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,15 +650,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535359601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.83206, y: 0.83206, z: 0.83206}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1912275035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -212.25}
+  m_AnchoredPosition: {x: 0, y: -177}
   m_SizeDelta: {x: 970, y: 970}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535359603
@@ -658,7 +734,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -317.3, y: 105.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368148187
 MonoBehaviour:
@@ -735,7 +811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 405.1, y: -235.4}
+  m_AnchoredPosition: {x: 339, y: -204}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403749847
@@ -1009,6 +1085,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1731531429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731531431}
+  - component: {fileID: 1731531430}
+  m_Layer: 0
+  m_Name: GlobalVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1731531430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731531429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 814bb94c70aa10f4ab3c8f9e5efe6a7c, type: 2}
+--- !u!4 &1731531431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731531429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.2172356, y: -10.715451, z: 19.462381}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912275031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1170,9 +1295,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<align=center><size=50>Credits</size></align>\n\n<align=center>Bakgrund\t\tSkott</align>\n\t\t    
-    Mira Sk\xF6ld   Charlie Buhre H\xE4gglund \n\n<align=center>Sprites\nSigge Hallquist
-    Solders & Mira Sk\xF6ld</align>"
+  m_text: "<align=center><size=50>Credits</size></align>\n\n<align=center>Bakgrund\t\t   
+    Skott</align>\n\t\t     Mira Sk\xF6ld   Charlie Buhre H\xE4gglund \n\n<align=center>Sprites\nSigge
+    Hallquist Solders & Mira Sk\xF6ld</align>\n\n<align=center>Equalizer\t       
+    Beat Counter</align>\n         Sigge Hallquist Solders   Charlie Buhre H\xE4gglund
+    \n\n<align=center>Musik</align>\t   \t\t\t\tSound Effects\nNiklas Landborg -
+    Main menu\tSigge Hallquist Solders\nNiklas Landbor - Credits\t\tFreesound\nWater
+    Flame - Space Pirates\n\n<align=center>Score\nMira Sk\xF6ld & Hampus Carlstr\xF6m
+    Svanberg\n\n<align=center>  Screen Shake\t        Buttons</align>\nSigge Hallquist
+    Solders   Mira Sk\xF6ld\n\nAnimations\nSigge Hallquist Solders & Charlie Buhre
+    H\xE4gglund\n\n<align=center>  Original Game\t        Logga</align>\n           
+    Clare Witty \t            Mira Sk\xF6ld\n\n<align=center> Glow\nSigge Hallquist
+    Solders\n\nDeath Scene\nCharlie Buhre H\xE4gglund\n\nSketch \nSigge Hallquist
+    Solders\n\nInspiration\nCrypt of the necrodancer\nCastle Crachers\nCyberpunk\nAdobe
+    Stock\n\nSpecial thanks to;\n\nUnity Discussions\nCharlie's Dad\nHampus Carlstr\xF6m 
+    Svanberg\nClara Witty\nAngelica Lewenhagen\nMira's Brother\nJohan Ronn\xE5s\nGithub
+    & Unity & Visual Studio\nAseprite\n\nBxB studio - Visualizer\nThomas Friday -
+    Screen Shake\n\nLBS stockholm s\xF6dra\nOur parents for creating us\nSteni\nMinecraft
+    and D&D for bringing us together\n\n\n\n\n\n\n\n\n\n\n\n\n\n<align=center><size=50>Thank
+    you for Playing!</size></align>\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86fbd6d0fbc2ad04bbd09249ab831373, type: 2}
   m_sharedMaterial: {fileID: 7068887518861160552, guid: 86fbd6d0fbc2ad04bbd09249ab831373, type: 2}
@@ -1211,7 +1352,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1258,3 +1399,4 @@ SceneRoots:
   - {fileID: 1450346237}
   - {fileID: 1912275035}
   - {fileID: 133037945}
+  - {fileID: 1731531431}

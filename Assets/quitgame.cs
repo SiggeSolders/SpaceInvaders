@@ -19,4 +19,5 @@ public class quitgame : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
+    //Denna kod gör så att man går ut från player mode när man trycker på quit knappen
 }

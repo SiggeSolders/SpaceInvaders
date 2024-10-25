@@ -335,6 +335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   endScore: 0
+  activeScene:
+    m_Handle: 0
 --- !u!4 &1703050458
 Transform:
   m_ObjectHideFlags: 0

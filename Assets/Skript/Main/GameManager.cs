@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
 {
+    public GameObject ringObject;
+
     public static GameManager Instance { get; private set; }
 
     public ScreenShake _screenShake;
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        ringObject.SetActive(false);
+
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour
         playerDeath = PlayerHit.GetComponent<AudioSource>();
         invaderDeath = InvaderHit.GetComponent<AudioSource>();
 
+        StartCoroutine(StartRingAnimation(1.0f));
 
         NewGame();
     }
@@ -78,7 +83,7 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-
+        StartRingAnimation(0.5f);
         SetScore(0);
         SetLives(3);
         NewRound();
@@ -191,6 +196,13 @@ public class GameManager : MonoBehaviour
     public void StartShaking()
     {
         StartCoroutine(_screenShake.Shaking());
+    }
+
+    public IEnumerator StartRingAnimation(float delay)
+    {
+        Debug.Log("Animation");
+        yield return new WaitForSeconds(delay);
+        ringObject.SetActive(true);
     }
 
 }

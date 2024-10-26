@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Death
+    uniqueID: 2506762331
+    locked: 0
+  - name: Buttons
+    uniqueID: 539560497
+    locked: 0

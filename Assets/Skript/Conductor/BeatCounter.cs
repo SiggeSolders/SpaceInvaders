@@ -42,11 +42,11 @@ public class BeatCounter : MonoBehaviour
         songPosRoundedDown = Math.Floor(songPos);
 
         //kollar om låten är vid en beat
-        if(songPosRoundedUp - songPos <= 0.25 && songPosRoundedUp - songPos >= 0)
+        if(songPosRoundedUp - songPos <= 0.35 && songPosRoundedUp - songPos >= 0)
         {
             inSync = true;
         }
-        else if(songPosRoundedDown - songPos >= -0.25 && songPosRoundedDown - songPos <= 0)
+        else if(songPosRoundedDown - songPos >= -0.35 && songPosRoundedDown - songPos <= 0)
         {
             inSync = true;
         }

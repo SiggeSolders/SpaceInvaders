@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
     private void SetScore(int playerScore)
     {
         score = playerScore;
-        scoretext.text = "Score: " + playerScore;
+        scoretext.text = "Score:           " + playerScore;
         Debug.Log("score: " + playerScore);
     }
     public void SetMultiplier()

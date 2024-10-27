@@ -24,6 +24,7 @@ public class BeatCounter : MonoBehaviour
 
     private void Awake()
     {
+        //buggar med att variabel inte uppdaterade om den var under 4 i början
         roundedUpValue = 4;
     }
     // Start is called before the first frame update
@@ -55,7 +56,7 @@ public class BeatCounter : MonoBehaviour
             inSync = false;
         }
 
-        //minskar missileShot och ökar roundedUpValue
+        //när låten är vid en beat minskar missleShot
         if(roundedUpValue == songPosRoundedUp)
         {
             roundedUpValue += 1;

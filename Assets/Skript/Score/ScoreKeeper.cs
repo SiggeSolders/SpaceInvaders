@@ -31,6 +31,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         activeScene = SceneManager.GetActiveScene();
 
+        //när scenen byts till SampleScene ska detta skript få tag på spelets gamemanager som ligger i SampleScene
         if(activeScene.name == "SampleScene" && gameManager == null)
         {
             gameManager = GameObject.Find("GameManager");
@@ -38,6 +39,7 @@ public class ScoreKeeper : MonoBehaviour
             scoreTarget = gameManager.GetComponent<GameManager>();
         }
 
+        //endScore är det score som visas på game over screenen, uppdateras när skriptet får tag på gamemanagern
         if(gameManager != null)
         {
             endScore = scoreTarget.score;

@@ -7,9 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    GameObject player;
-    AudioSource missileSound;
-
     public LineRenderer lineRendererTarget;
     LineRenderer lineR;
 
@@ -25,9 +22,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         multiplier = 1;
-
-        player = GameObject.Find("Player");
-        missileSound = player.GetComponent<AudioSource>();
 
         lineR = lineRendererTarget.GetComponent<LineRenderer>();
 
@@ -59,8 +53,8 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == true && checkBeatCounter.missleShot <= 0)
         {
             checkBeatCounter.missleShot = 2;
-            //missileSound.Play();
             missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+
             //Lägger till en multiplier som används på score-systemet
             if(multiplier < 10)
             {

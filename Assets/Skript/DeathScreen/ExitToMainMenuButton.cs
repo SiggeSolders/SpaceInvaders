@@ -19,6 +19,7 @@ public class ExitToMainMenuButton : MonoBehaviour
 
     public void ExitToMainMenu()
     {
+        //nollställer endScore så det blir nya scoret nästa gång man förlorar
         SceneManager.LoadScene(sceneName: "Main Menu(Mira)");
 
         scoreKeeper.endScore = 0;

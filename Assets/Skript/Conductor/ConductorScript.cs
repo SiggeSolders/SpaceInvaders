@@ -25,6 +25,7 @@ public class ConductorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Uppdaterar vilken position i låten spelet är, både i sekunder och "beats"
         songPosition = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffset);
         songPositionInBeats = songPosition / secPerBeat;
     }

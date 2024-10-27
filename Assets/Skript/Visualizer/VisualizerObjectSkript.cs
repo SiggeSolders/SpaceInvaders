@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class VisualizerObjectSkript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //Ett skript som finns endast för att visualizern inte ska plocka upp fel object
 }

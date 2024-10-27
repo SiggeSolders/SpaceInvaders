@@ -6,9 +6,10 @@ public class CreditsScroller : MonoBehaviour
 {
     [SerializeField] private float scrollSpeed = 20.0f;
     private Vector3 direction = Vector3.up;
-    // Update is called once per frame
+
     void Update()
     {
+        //flyttar credits-texten så den syns över kameran
         transform.position += scrollSpeed * Time.deltaTime * direction;
     }
 }

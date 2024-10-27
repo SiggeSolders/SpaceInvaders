@@ -242,9 +242,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a92204052fe14187ac3a9e728a816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ringObject: {fileID: 0}
   _screenShake: {fileID: 357571844}
   scoretext: {fileID: 0}
+  multiplierText: {fileID: 0}
+  multiplier: {fileID: 0}
   playerScore: 0
+  PlayerHit: {fileID: 0}
+  InvaderHit: {fileID: 0}
 --- !u!4 &291119961
 Transform:
   m_ObjectHideFlags: 0
@@ -1231,6 +1236,7 @@ MonoBehaviour:
   lineRendererTarget: {fileID: 1661427739}
   beatConductor: {fileID: 1969989701}
   missilePrefab: {fileID: 8747416964141690900, guid: 8281aaf2db16c0a4eaad9477dbd73677, type: 3}
+  multiplier: 1
 --- !u!50 &1218498028
 Rigidbody2D:
   serializedVersion: 4

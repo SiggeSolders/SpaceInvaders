@@ -52,11 +52,13 @@ public class Player : MonoBehaviour
         {
             checkBeatCounter.missleShot = 2;
             missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+            //Lägger till en multiplier som används på score-systemet
             if(multiplier < 16)
             {
                 multiplier = multiplier * 2;
             }
         }
+        //resettar multipliern om man misslyckas med att skjuta on beat
         if (Input.GetKeyDown(KeyCode.Space) && checkBeatCounter.inSync == false)
         {
             multiplier = 1;

@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetMultiplier()
     {
+        //Sätter multipliern utifrån player skriptet och visar den om den är mer än 1
         multiplierText.text = player.multiplier + "X";
         if (player.multiplier > 1)
         {
@@ -133,7 +134,7 @@ public class GameManager : MonoBehaviour
             multiplier.SetActive(false);
         }
     }
-
+    //väntar med att byta scen så man kan höra death-sound
     private IEnumerator DeathSwitch(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -152,7 +153,7 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(DeathSwitch(1.0f));
     }
-
+    //Ökar score när en invader blir träffad utifrån vilken invader det är och vad multiplierns värde ligger på
     public void OnInvaderKilled(Invader invader)
     {
         invader.gameObject.SetActive(false);
@@ -192,7 +193,7 @@ public class GameManager : MonoBehaviour
             OnPlayerKilled(player);
         }
     }
-
+    //Startar screenshake
     public void StartShaking()
     {
         StartCoroutine(_screenShake.Shaking());

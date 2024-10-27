@@ -21,24 +21,26 @@ public class Visualizer : MonoBehaviour
 
     void Start()
     {
+        //Hämtar de actuella komponenterna
         audioSource = audioClipSource.GetComponent<AudioSource>();
 
         visualizerObjects = GetComponentsInChildren<VisualizerObjectSkript>();
         visualizerImage = GetComponentsInChildren<Image>();
 
+        //Om det inte finns något ljud körs inte skriptet
         if (!audioSource)
         {
             return;
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
+        //Hämtar ljudets "spectrum data" för att dela upp det i sina beståndsdelar
         float[] spectrumData = new float[64];
 
         audioSource.GetSpectrumData(spectrumData, 0, FFTWindow.Rectangular);
 
+        //ändrar storlekan på objecten under visualizern så att de matchar specrumdatan
         for (int i = 0; i < visualizerObjects.Length; i++)
         {
             float newSize = visualizerObjects[i].GetComponent<Image>().fillAmount;

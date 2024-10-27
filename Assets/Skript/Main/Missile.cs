@@ -30,6 +30,7 @@ public class Missile : Projectile
         if (bunker == null) //Om det inte är en bunker vi träffat så ska skottet försvinna.
         {
             Destroy(gameObject);
+            //Om det träffade objektet inte är en vägg startas screenshake
             if(walls == null)
             {
                 GameManager.Instance.StartShaking();
